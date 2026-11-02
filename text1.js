@@ -1,14 +1,29 @@
-function calculeazaSuma(a, b) {
-    return a + b;
+const { initializeApp } = require('firebase/app');
+const { getFirestore, doc, setDoc } = require('firebase/firestore');
+
+// Configuratia ta exacta
+const firebaseConfig = {
+  apiKey: "AIzaSyBfWocVHFmLHjkI3wALcNWs3KFskogc54M",
+  authDomain: "test-945bc.firebaseapp.com",
+  projectId: "test-945bc",
+  storageBucket: "test-945bc.firebasestorage.app",
+  messagingSenderId: "533346433000",
+  appId: "1:533346433000:web:fbb8f474af0d2f3173165d"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+async function testSalvare() {
+  try {
+    await setDoc(doc(db, "teste", "testul1"), {
+      nume: "Geamanu",
+      status: "Conexiune reusita!"
+    });
+    console.log("SUCCES: Datele s-au salvat in Firebase!");
+  } catch (eroare) {
+    console.error("EROARE:", eroare);
+  }
 }
 
-let suma = calculeazaSuma(7, 3);
-console.log("Suma este: " + suma);
-
-function calculeazaProdusul(a, b)
-{
-    return a*b;
-}
-let produsul = calculeazaProdusul(6, 7);
-console.log("Produsul este: "+produsul);
-//salut fratilor
+testSalvare();
