@@ -11,4 +11,4 @@ function calculeazaProdusul(a, b)
 }
 let produsul = calculeazaProdusul(6, 7);
 console.log("Produsul este: "+produsul);
-//salut fratilor 
+//salut fratilor
