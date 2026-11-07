@@ -27,3 +27,4 @@ function VerificaZileleLunii( luna, an )
         break;
    }
 }
+
