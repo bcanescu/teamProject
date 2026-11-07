@@ -28,3 +28,21 @@ function VerificaZileleLunii( luna, an )
    }
 }
 
+const DateleCalendarului=[]
+
+const eveniment={
+    nume: "Unihack 2026",
+    ziua: 13,
+    luna: Noiembrie, 
+    an: 2026, 
+    locatie: MX_Museum_Timisoara,
+    participare: false,
+    futureparticipation: true
+};
+
+if(VerificaZileleLunii(eveniment.luna, eveniment.an)==true)
+{
+    //Adaug evenimentul in calendar
+    DateleCalendarului.push(eveniment);
+}
+
