@@ -38,7 +38,7 @@ const eveniment={
     luna: "Noiembrie", 
     an: 2026, 
     locatie: "MX_Museum_Timisoara",
-    participare: false,
+    participare: true,
     futureparticipation: true
 };
 
@@ -49,3 +49,19 @@ if(VerificaZileleLunii(eveniment.luna, eveniment.an)==true)
     console.log(DateleCalendarului);
 }
 
+
+//Adisarea in HTML//
+
+if (VerificaZileleLunii(eveniment.luna, eveniment.an) === true) {
+    DateleCalendarului.push(eveniment);
+    console.log("Evenimentul a fost adaugat in calendar");
+    
+    
+    const afisaj = document.getElementById("calendar-afisare");
+    afisaj.innerHTML = `
+        <h2>📅 Eveniment Nou Adăugat!</h2>
+        <p><strong>Nume:</strong> ${eveniment.nume}</p>
+        <p><strong>Data:</strong> ${eveniment.ziua} ${eveniment.luna} ${eveniment.an}</p>
+        <p><strong>Locație:</strong> ${eveniment.locatie}</p>
+        <p><strong>Participare:</strong> ${eveniment.participare ? "Da" : "Nu"}</p>`;
+}
