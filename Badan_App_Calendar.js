@@ -16,6 +16,7 @@ function VerificaZileleLunii( luna, an )
         else{
             console.log(`Anul NU este bisect. Luna ${luna} are 28 de zile!`);
         }
+        break;
     case Calendar[3]:
     case Calendar[5]:
     case Calendar[8]:
@@ -26,6 +27,7 @@ function VerificaZileleLunii( luna, an )
         console.log(`Luna ${luna} are 31 de zile.`)
         break;
    }
+   return true;
 }
 
 const DateleCalendarului=[]
@@ -33,16 +35,17 @@ const DateleCalendarului=[]
 const eveniment={
     nume: "Unihack 2026",
     ziua: 13,
-    luna: Noiembrie, 
+    luna: "Noiembrie", 
     an: 2026, 
-    locatie: MX_Museum_Timisoara,
+    locatie: "MX_Museum_Timisoara",
     participare: false,
     futureparticipation: true
 };
 
 if(VerificaZileleLunii(eveniment.luna, eveniment.an)==true)
 {
-    //Adaug evenimentul in calendar
     DateleCalendarului.push(eveniment);
+    console.log("Evenimentul a fost adaugat in calendar");
+    console.log(DateleCalendarului);
 }
 
